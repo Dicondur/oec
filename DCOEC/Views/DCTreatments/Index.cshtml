@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<DCOEC.Models.Treatment>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = ViewBag.FarmName;
 }
 
-<h2>Index of Treaments</h2>
+<h2>Showing Treaments of {@ViewBag.FarmName} Farm</h2>
 
 
 <p>
@@ -14,12 +14,13 @@
     <thead>
         <tr>
                 <th>
+                  
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
-                <th>
-                    Fertilizer Name
+                @*<th>
+                    From Fertilizer Name (Calculated)
                    
-                </th>
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.Moisture)
                 </th>
@@ -29,15 +30,13 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Weight)
                 </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Plot)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Plot.Farm)
-            </th>
-            <th>
-                Farm Name
-            </th>
+            </th>*@
+           
             <th></th>
         </tr>
     </thead>
@@ -45,11 +44,28 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.ActionLink(item.Name, "Index", "DCTreatmentFertilizers", new { treatmentID = item.TreatmentId})
+                
             </td>
-                @ViewBag.name;
-            </td>
-          
+            @*<td>
+                @foreach (var x in item.TreatmentFertilizer.OrderBy(x => x.FertilizerName))
+                {
+
+                    @x.FertilizerName;
+                    
+                    {
+                        <span>+</span>
+
+                    }
+
+                }
+                @if (item.TreatmentFertilizer is null)
+                {
+                <span>no fertilizer</span>
+
+                }
+
+            </td>*@
 
             <td>
                 @Html.DisplayFor(modelItem => item.Moisture)
@@ -60,12 +76,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Weight)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Plot.PlotId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Plot.Farm.Name)
-            </td>
+                
+            </td>*@
 
             <td>
                 <a asp-action="Edit" asp-route-id="@item.TreatmentId">Edit</a> |

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DCOEC.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace DCOEC.Controllers
 {
@@ -19,9 +20,54 @@ namespace DCOEC.Controllers
         }
 
         // GET: DCTreatmentFertilizers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? treatmentID)
         {
-            var oECContext = _context.TreatmentFertilizer.Include(t => t.FertilizerNameNavigation).Include(t => t.Treatment);
+
+
+            //store to session
+            if (treatmentID != null)
+            {
+
+
+                //Set Session
+
+                // create session variables
+                HttpContext.Session.SetInt32("_treatId", Convert.ToInt32(treatmentID));
+                //HttpContext.Session.SetString("_farmName", farmName);
+                TempData["Message"] = "Treatment ID stored to session.";
+
+            }
+            else //(plotId== null)
+            {
+                if (HttpContext.Session.GetString("_treatId") != null)
+                {
+                    treatmentID = Convert.ToInt32(HttpContext.Session.GetInt32("_treatId"));
+                    //farmName = HttpContext.Session.GetString("_farmName");
+
+
+                    //Set View Data
+                    ViewData["TreatID"] = treatmentID;
+                    //ViewData["farmName"] = farmName;
+
+                    TempData["Message"] = "Got Treatement ID from session.";
+
+                }
+                else
+                {
+
+                    TempData["Message"] = "Select a Treatement first";
+                    return RedirectToAction("Index", "DCTreatments");
+                }
+
+
+            }
+
+
+
+
+            var oECContext = _context.TreatmentFertilizer.Include(t => t.FertilizerNameNavigation).Include(t => t.Treatment)
+                .Where(x => x.TreatmentId == treatmentID)
+                .OrderBy(x => x.FertilizerName);
             return View(await oECContext.ToListAsync());
         }
 

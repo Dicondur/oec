@@ -23,7 +23,7 @@ namespace DCOEC.Controllers
         public async Task<IActionResult> Index(int? plotId, string farmName)
         {
 
-            ViewBag.name = "";
+           
 
             //store to session
             if (plotId != null)
@@ -65,26 +65,19 @@ namespace DCOEC.Controllers
 
 
 
-            foreach(var x in _context.TreatmentFertilizer) {
-                ViewBag.name = x.FertilizerNameNavigation.FertilizerName;
-                //if (x.FertilizerNameNavigation.FertilizerName is null)
-                //{
 
-                //    ViewBag.name = "No fertilizer";
-                //}
-                //else
-                //{
-                //    ViewBag.name = x.FertilizerNameNavigation.FertilizerName + "+";
-                //}
-
-            }
-        
-
+          
 
 
             var oECContext = _context.Treatment
                                     .Include(t => t.Plot)
-                                    .Where (x => x.PlotId == plotId);
+                                    .Include(f=> f.Plot.Farm)
+                                    .Include(t => t.TreatmentFertilizer)
+                                    .Where(x => x.PlotId == plotId);
+            //.OrderBy (x => x.TreatmentFertilizer);
+
+            ViewBag.FarmName = oECContext.FirstOrDefault().Plot.Farm.Name;
+
             return View(await oECContext.ToListAsync());
         }
 
@@ -121,6 +114,7 @@ namespace DCOEC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TreatmentId,Name,PlotId,Moisture,Yield,Weight")] Treatment treatment)
         {
+            //treatment.Name = 
             if (ModelState.IsValid)
             {
                 _context.Add(treatment);
@@ -164,6 +158,11 @@ namespace DCOEC.Controllers
             {
                 try
                 {
+                    foreach (var x in _context.TreatmentFertilizer .OrderBy(x => x.FertilizerName))
+                    {
+                        treatment.Name += x.FertilizerName+"+";
+                    }
+                                            
                     _context.Update(treatment);
                     await _context.SaveChangesAsync();
                 }
