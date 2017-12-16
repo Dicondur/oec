@@ -44,7 +44,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.ActionLink(item.Name, "Index", "DCTreatmentFertilizers", new { treatmentID = item.TreatmentId})
+                @Html.ActionLink(item.Name, "Index", "DCTreatmentFertilizers", new { treatmentID = item.TreatmentId })
                 
             </td>
             @*<td>
@@ -94,5 +94,6 @@
     </tbody>
 </table>
 <div>
-    @Html.ActionLink("Back To Plots", "Index", "DCPlots")
+    @Html.ActionLink("Back To Plots", "Index", "DCPlots") 
+    @*, new { ID = ViewBag.PlotId })*@
 </div>

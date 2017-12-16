@@ -13127,11 +13127,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Dinesh\\Projects\\2230_MSTech\\DCOEC\\AS3\\Dinesh_AS3_AssignmentSubmission\\DCOEC\\DCOEC\\DCOEC.csproj",
+      "projectUniqueName": "C:\\Dinesh\\Projects\\2230_MSTech\\DCOEC\\AS4\\AS3\\DCOEC\\DCOEC.csproj",
       "projectName": "DCOEC",
-      "projectPath": "C:\\Dinesh\\Projects\\2230_MSTech\\DCOEC\\AS3\\Dinesh_AS3_AssignmentSubmission\\DCOEC\\DCOEC\\DCOEC.csproj",
+      "projectPath": "C:\\Dinesh\\Projects\\2230_MSTech\\DCOEC\\AS4\\AS3\\DCOEC\\DCOEC.csproj",
       "packagesPath": "C:\\Users\\dines\\.nuget\\packages\\",
-      "outputPath": "C:\\Dinesh\\Projects\\2230_MSTech\\DCOEC\\AS3\\Dinesh_AS3_AssignmentSubmission\\DCOEC\\DCOEC\\obj\\",
+      "outputPath": "C:\\Dinesh\\Projects\\2230_MSTech\\DCOEC\\AS4\\AS3\\DCOEC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

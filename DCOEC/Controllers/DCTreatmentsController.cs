@@ -77,7 +77,7 @@ namespace DCOEC.Controllers
             //.OrderBy (x => x.TreatmentFertilizer);
 
             ViewBag.FarmName = oECContext.FirstOrDefault().Plot.Farm.Name;
-
+            ViewBag.PlotID = oECContext.FirstOrDefault().Plot.PlotId;
             return View(await oECContext.ToListAsync());
         }
 
