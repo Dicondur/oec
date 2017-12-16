@@ -66,12 +66,20 @@
             </div>
             <div class="form-group">
                 <label asp-for="DateJoined" class="control-label"></label>
-                <input asp-for="DateJoined" class="form-control" />
+
+
+                @Html.TextBoxFor(m => m.DateJoined, "{0:d MMM, yyyy}", new { @class = "form-control dateInput", @placeholder = "plz input date" })
+
+
+                @*<input asp-for="DateJoined" class="form-control" />*@
                 <span asp-validation-for="DateJoined" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LastContactDate" class="control-label"></label>
-                <input asp-for="LastContactDate" class="form-control" />
+                @Html.TextBoxFor(m => m.LastContactDate, "{0:d MMM, yyyy}", new { @class = "form-control dateInput", @placeholder = "plz input date" })
+
+
+                @*<input asp-for="LastContactDate" class="form-control" />*@
                 <span asp-validation-for="LastContactDate" class="text-danger"></span>
             </div>
             <div class="form-group">

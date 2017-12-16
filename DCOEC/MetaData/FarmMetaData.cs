@@ -48,6 +48,9 @@ namespace DCOEC.Models
         [StringLength(250)]
         public string Email { get; set; }
         public string Directions { get; set; }
+
+        [Display(Name = "Date Joined")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d MMM, yyyy}")]
         public DateTime? DateJoined { get; set; }
 
         [Display(Name = "Last Contact")]

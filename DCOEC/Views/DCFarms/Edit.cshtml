@@ -16,13 +16,13 @@
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
-              
+
                 <span asp-validation-for="Name" class="text-danger"></span>
 
                 @*<span class="field-validation-error text-danger"
-                      data-valmsg-for="Name"
-                      data-valmsg-replace="true">Please enter a farm name!</span>
-                @Html.ValidationMessage("Name", "Please enter a farm name.", new { @class = "text-danger" })*@
+                          data-valmsg-for="Name"
+                          data-valmsg-replace="true">Please enter a farm name!</span>
+                    @Html.ValidationMessage("Name", "Please enter a farm name.", new { @class = "text-danger" })*@
 
 
             </div>
@@ -45,7 +45,7 @@
                 <label asp-for="ProvinceCode" class="control-label"></label>
                 <select asp-for="ProvinceCode" class="form-control" asp-items="ViewBag.ProvinceCode"></select>
 
-                @*@Html.DropDownList("Province Code", 
+                @*@Html.DropDownList("Province Code",
                     new SelectList("Test1", "Test2", "Test3", "Test4"),
                     "Select a Province",
                     new { @class = "form-control" })*@
@@ -79,12 +79,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="DateJoined" class="control-label"></label>
-                <input asp-for="DateJoined" class="form-control" />
+
+
+                @Html.TextBoxFor(m => m.DateJoined, "{0:d MMM, yyyy}", new { @class = "form-control dateInput", @placeholder = "plz input date" })
+
+                @*<input asp-for="DateJoined" class="form-control" />*@
                 <span asp-validation-for="DateJoined" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LastContactDate" class="control-label"></label>
-                <input asp-for="LastContactDate" class="form-control" />
+                @Html.TextBoxFor(m => m.LastContactDate, "{0:d MMM, yyyy}", new { @class = "form-control dateInput", @placeholder = "plz input date" })
+
+                @*<input asp-for="LastContactDate" class="form-control" />*@
                 <span asp-validation-for="LastContactDate" class="text-danger"></span>
             </div>
             <div class="form-group">
