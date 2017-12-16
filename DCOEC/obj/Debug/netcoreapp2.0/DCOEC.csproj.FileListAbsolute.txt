@@ -46,3 +46,5 @@ C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCOEC\obj\Debug\netcoreapp2.0\DCOEC
 C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCOEC\obj\Debug\netcoreapp2.0\DCOEC.AssemblyInfo.cs
 C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCOEC\obj\Debug\netcoreapp2.0\DCOEC.dll
 C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCOEC\obj\Debug\netcoreapp2.0\DCOEC.pdb
+C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCOEC\bin\Debug\netcoreapp2.0\DCClassLibrary.dll
+C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCOEC\bin\Debug\netcoreapp2.0\DCClassLibrary.pdb

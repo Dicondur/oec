@@ -1,0 +1,9 @@
+C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCClassLibrary\bin\Debug\netcoreapp2.0\DCClassLibrary.deps.json
+C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCClassLibrary\bin\Debug\netcoreapp2.0\DCClassLibrary.dll
+C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCClassLibrary\bin\Debug\netcoreapp2.0\DCClassLibrary.pdb
+C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCClassLibrary\obj\Debug\netcoreapp2.0\DCClassLibrary.csprojResolveAssemblyReference.cache
+C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCClassLibrary\obj\Debug\netcoreapp2.0\DCClassLibrary.csproj.CoreCompileInputs.cache
+C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCClassLibrary\obj\Debug\netcoreapp2.0\DCClassLibrary.AssemblyInfoInputs.cache
+C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCClassLibrary\obj\Debug\netcoreapp2.0\DCClassLibrary.AssemblyInfo.cs
+C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCClassLibrary\obj\Debug\netcoreapp2.0\DCClassLibrary.dll
+C:\Dinesh\Projects\2230_MSTech\DCOEC\AS4\AS3\DCClassLibrary\obj\Debug\netcoreapp2.0\DCClassLibrary.pdb
