@@ -24,7 +24,7 @@ namespace DCOEC.Models
         [Required(ErrorMessage = "Farm name missing")]
         [StringLength(50)]
         [Display(Name = "Farm Name")]
-        [Remote("DCCapitalize", "Validation")]
+        [Remote("DCCapitalize", "Remotes")]
         public string Name { get; set; }
 
         [StringLength(50)]
@@ -42,7 +42,9 @@ namespace DCOEC.Models
         public string ProvinceCode { get; set; }
 
         [StringLength(7)]
-        //[Remote]
+        [RegularExpression(@"^[A-Za-z]\d[A-Za-z] ?\d[A-Za-z]\d$",
+               ErrorMessage = "the {0} is not a valid Canadian pattern")]
+
         public string PostalCode { get; set; }
 
         [Display(Name = "Home Phone")]

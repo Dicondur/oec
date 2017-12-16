@@ -6,6 +6,7 @@ namespace DCClassLibrary
 {
     public class DCValidations
     {
+
         //Do Capitalize
         public static string DCCapitalize(string inp)
         {
