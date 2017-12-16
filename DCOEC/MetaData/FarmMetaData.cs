@@ -24,6 +24,7 @@ namespace DCOEC.Models
         [Required(ErrorMessage = "Farm name missing")]
         [StringLength(50)]
         [Display(Name = "Farm Name")]
+        [Remote("DCCapitalize", "Validation")]
         public string Name { get; set; }
 
         [StringLength(50)]
