@@ -10,8 +10,12 @@ namespace DCOEC.Models
 {
 
     [ModelMetadataType(typeof(FarmMetaData))]
-    public partial class Farm
+    public partial class Farm : IValidatableObject
     {
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            yield return ValidationResult.Success;
+        }
     }
     public class FarmMetaData
     {
@@ -49,10 +53,13 @@ namespace DCOEC.Models
         public string Email { get; set; }
         public string Directions { get; set; }
 
+
+        [DataType(DataType.Date)]
         [Display(Name = "Date Joined")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d MMM, yyyy}")]
         public DateTime? DateJoined { get; set; }
 
+        [DataType(DataType.Date)]
         [Display(Name = "Last Contact")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d MMM, yyyy}")]
         public DateTime? LastContactDate { get; set; }

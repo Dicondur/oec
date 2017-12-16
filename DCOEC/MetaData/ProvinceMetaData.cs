@@ -18,7 +18,7 @@ namespace DCOEC.Models
         //{
         //    Farm = new HashSet<Farm>();
         //}
-        //[Required]
+        [Required]
         [Display(Name = "Province Code (Key)")]
         [Key]
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:c}", ConvertEmptyStringToNull = true)]
@@ -50,6 +50,8 @@ namespace DCOEC.Models
 
         public string ProvinceCode { get; set; }
 
+
+        [Required]
         [StringLength(30, MinimumLength = 3)]
         public string Name { get; set; }
 
