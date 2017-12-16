@@ -47,7 +47,7 @@ namespace DCOEC.Controllers
         // GET: Provinces/Create
         public IActionResult Create()
         {
-            ViewData["CountryCode"] = new SelectList(_context.Country, "CountryCode", "CountryCode");
+            ViewData["CountryCode"] = new SelectList(_context.Country.OrderBy(x => x.Name), "CountryCode", "CountryCode");
             return View();
         }
 

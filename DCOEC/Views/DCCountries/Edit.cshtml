@@ -12,7 +12,15 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="CountryCode" />
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CountryCode)
+                @Html.EditorFor(model => model.CountryCode, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CountryCode, "", new { @class = "text-danger" })
+
+
+            </div>
+            @*<input type="hidden" asp-for="CountryCode" />*@
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />

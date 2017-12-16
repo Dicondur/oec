@@ -20,7 +20,7 @@ namespace DCOEC.Models
         //}
         //[Required]
         [Display(Name = "Province Code (Key)")]
-        //[Key]
+        [Key]
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:c}", ConvertEmptyStringToNull = true)]
         [ReadOnly(true)]
         //[HiddenInput(DisplayValue = true)]
@@ -50,7 +50,7 @@ namespace DCOEC.Models
 
         public string ProvinceCode { get; set; }
 
-
+        [StringLength(30, MinimumLength = 3)]
         public string Name { get; set; }
 
 

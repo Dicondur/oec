@@ -12,11 +12,25 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ProvinceCode" />
+            @*<input type="hidden" asp-for="ProvinceCode" />*@
+            <div class="form-group">
+                @*<label asp-for="Name" class="control-label"></label>  , htmlAttributes: new { @class = "control-label col-md-2"}*@
+                @*<input asp-for="Name" class="form-control" />*@
+                @*<span asp-validation-for="ProvinceCode" class="text-danger"></span>*@
+
+                @Html.LabelFor(model => model.ProvinceCode)
+                @Html.EditorFor(model => model.ProvinceCode, new { htmlAttributes = new { @readonly = "readonly", @class="form-control" } })
+                @Html.ValidationMessageFor(model => model.ProvinceCode, "", new { @class = "text-danger" })
+              
+               
+            </div>
+
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                @*<span asp-validation-for="Name" class="text-danger"></span>*@
             </div>
             <div class="form-group">
                 <label asp-for="CountryCode" class="control-label"></label>
