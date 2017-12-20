@@ -74,7 +74,7 @@ namespace DCOEC.Controllers
                 {
               
                 TempData["Message"] = Ex.InnerException.Message;
-                ModelState.AddModelError("InnerExpection", Ex.InnerException.Message);
+                ModelState.AddModelError("InnerException", Ex.InnerException.Message);
                 }
                 //return RedirectToAction(nameof(Index));
            
@@ -134,6 +134,7 @@ namespace DCOEC.Controllers
                 catch (Exception Ex)
                 {
                     TempData["Message"] = Ex.InnerException;
+                    ModelState.AddModelError("InnerException", Ex.InnerException.Message);
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -167,8 +168,15 @@ namespace DCOEC.Controllers
         {
             var farm = await _context.Farm.SingleOrDefaultAsync(m => m.FarmId == id);
             _context.Farm.Remove(farm);
-            await _context.SaveChangesAsync();
-            TempData["Message"] = "Delete.. Saved";
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch(Exception ex)
+            {
+                TempData["Message"] = ex.InnerException.Message;
+            }
+            TempData["Message"] = "Delete success";
             return RedirectToAction(nameof(Index));
         }
 

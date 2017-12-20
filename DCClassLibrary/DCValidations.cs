@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DCClassLibrary
 {
-    public class DCValidations
+    public class DCValidations : ValidationAttribute
     {
 
         //Do Capitalize
@@ -22,6 +23,24 @@ namespace DCClassLibrary
                 return new string(a);
             }
         }
+
+        //Remove whitespaces
+        public static string DCRemoveWhiteSpace(string inp)
+        {
+
+            if (string.IsNullOrEmpty(inp))
+            {
+                return string.Empty;
+            }
+            else
+            {
+               
+                string res = inp.Trim();
+                //a[0] = char.ToUpper(a[0]);
+                return res;
+            }
+        }
+
 
         //Post code validations
         public static bool DCPostalCodeValidation(ref string inp)
